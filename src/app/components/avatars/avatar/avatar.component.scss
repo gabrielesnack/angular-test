@@ -1,0 +1,35 @@
+.avatar {
+  display: block;
+  background-color: #d0d0d0;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  &-rounded {
+    &,
+    img {
+      border-radius: 50%;
+    }
+  }
+
+  //avatar's sizes
+  &,
+  &-sm {
+    width: 4rem;
+    height: 4rem;
+  }
+  &-md {
+    width: 4.5rem;
+    height: 4.5rem;
+  }
+  &-lg {
+    width: 5rem;
+    height: 5rem;
+  }
+  &-xl {
+    width: 6rem;
+    height: 6rem;
+  }
+}
