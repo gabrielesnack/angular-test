@@ -1,0 +1,41 @@
+.lantern-card {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+
+    .lantern-card__title {
+      margin-left: 1rem;
+    }
+  }
+
+  &__title {
+    margin-bottom: 0;
+    font-size: 1rem;
+  }
+
+  &__text {
+    font-size: 0.9rem;
+  }
+
+  &__icons {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.7rem;
+
+    .mat-icon {
+      padding: 0.5rem;
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0 0 2rem 0 rgba(136, 152, 170, 0.15);
+    transition: all 0.25s ease-in-out;
+    transform: translateY(-0.25rem);
+  }
+}

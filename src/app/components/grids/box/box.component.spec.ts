@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LaternGreenCardComponent } from './latern-green-card.component';
+import { BoxComponent } from './box.component';
 
-describe('LaternGreenCardComponent', () => {
-  let component: LaternGreenCardComponent;
-  let fixture: ComponentFixture<LaternGreenCardComponent>;
+describe('BoxComponent', () => {
+  let component: BoxComponent;
+  let fixture: ComponentFixture<BoxComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LaternGreenCardComponent ]
+      declarations: [ BoxComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LaternGreenCardComponent);
+    fixture = TestBed.createComponent(BoxComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
