@@ -8,10 +8,14 @@ export class LanternService {
   lanterns: ILantern[] = [];
 
   constructor() {
-    this.lanterns = this.getLanternsFromLocalStorage();
+    this.lanterns = this.getLanterns();
   }
 
-  setLanterns(lantern: ILantern) {}
+  setLantern(lantern: ILantern) {
+    const pos = this.lanterns.findIndex((e) => e.id == lantern.id);
+    pos != -1 ? (this.lanterns[pos] = lantern) : this.lanterns.push({ id: this.genRandomId(), ...lantern });
+    this.setLanternsToLocalStorage();
+  }
 
   getLanterns() {
     return (this.lanterns.length && this.lanterns) || this.getLanternsFromLocalStorage();
@@ -19,6 +23,14 @@ export class LanternService {
 
   private getLanternsFromLocalStorage(): ILantern[] {
     const store = window.localStorage.getItem('lanterns');
-    return JSON.parse(JSON.stringify(store)) || [];
+    return JSON.parse(store || '[]');
+  }
+
+  private setLanternsToLocalStorage(): void {
+    window.localStorage.setItem('lanterns', JSON.stringify(this.lanterns));
+  }
+
+  private genRandomId() {
+    return Math.random().toString(36).substring(2);
   }
 }

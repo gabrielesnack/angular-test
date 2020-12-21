@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LanternService } from '@services/lantern/lantern.service';
 
 @Component({
   selector: 'lantern-editor',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./lantern-editor.component.scss'],
 })
 export class LanternEditorComponent implements OnInit {
-  constructor() {}
+  constructor(private lanternService: LanternService) {}
 
   form = {};
 
@@ -21,6 +22,7 @@ export class LanternEditorComponent implements OnInit {
 
   save(e: any) {
     e.stopImmediatePropagation();
+    this.lanternService.setLantern(this.form);
     console.log(this.form);
   }
 }
