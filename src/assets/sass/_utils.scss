@@ -1,0 +1,39 @@
+@import '_breakpoints.scss';
+
+.truncate {
+  @for $i from 1 through 5 {
+    &-#{$i} {
+      display: -webkit-box;
+      -webkit-line-clamp: $i;
+      -webkit-box-orient: vertical;
+      white-space: normal;
+      word-break: break-word;
+      overflow: hidden;
+    }
+  }
+}
+
+.untruncate {
+  &__onhover:hover {
+    @for $i from 1 through 5 {
+      .truncate-#{$i} {
+        display: inherit;
+        white-space: normal;
+        word-break: break-word;
+        transition: 0.3s ease-in-out;
+      }
+    }
+  }
+}
+
+.container {
+  padding-top: 4rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media screen and (min-width: $breakpoint-md) {
+    max-width: calc(100% - 12vw);
+  }
+}

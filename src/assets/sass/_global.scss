@@ -1,25 +1,3 @@
-.truncate {
-  @for $i from 1 through 5 {
-    &-#{$i} {
-      display: -webkit-box;
-      -webkit-line-clamp: $i;
-      -webkit-box-orient: vertical;
-      white-space: normal;
-      word-break: break-word;
-      overflow: hidden;
-    }
-  }
-}
-
-.untruncate {
-  &__onhover:hover {
-    @for $i from 1 through 5 {
-      .truncate-#{$i} {
-        display: inherit;
-        white-space: normal;
-        word-break: break-word;
-        transition: 0.3s ease-in-out;
-      }
-    }
-  }
-}
+@import '_forms.scss';
+@import '_utils.scss';
+@import '_buttons.scss';
