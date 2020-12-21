@@ -1,11 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LanternCardComponent } from './lantern-card/lantern-card.component';
 import { SharedModule } from '../shared/shared.module';
 import { LanternRoutingModule } from './lantern-routing.module';
-import { LanternsComponent } from '~/app/pages/lanterns/lanterns.component';
+
+//pages
+import { LanternsComponent } from '@pages/lanterns/lanterns.component';
+import { LanternDetailComponent } from '@pages/lantern-detail/lantern-detail.component';
+
+//components
+import { LanternCardComponent } from './lantern-card/lantern-card.component';
+import { LanternEditorComponent } from './lantern-editor/lantern-editor.component';
 @NgModule({
-  declarations: [LanternCardComponent, LanternsComponent],
+  declarations: [LanternCardComponent, LanternsComponent, LanternDetailComponent, LanternEditorComponent],
   imports: [CommonModule, LanternRoutingModule, SharedModule],
   exports: [CommonModule, SharedModule, LanternCardComponent],
 })

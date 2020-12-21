@@ -1,7 +1,6 @@
 .lantern-card {
   display: flex;
   flex-direction: column;
-  margin: 1rem;
 
   &__header {
     display: flex;
@@ -25,10 +24,14 @@
   &__icons {
     position: absolute;
     top: 0.5rem;
-    right: 0.7rem;
+    right: 1rem;
+    display: flex;
+    justify-content: space-between;
 
     .mat-icon {
       padding: 0.5rem;
+      width: auto;
+      height: auto;
     }
   }
 
