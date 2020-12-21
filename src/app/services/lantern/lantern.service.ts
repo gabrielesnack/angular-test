@@ -1,21 +1,24 @@
 import { Injectable } from '@angular/core';
-import { ILanterns } from './types';
+import { ILantern } from './types';
 
 @Injectable({
   providedIn: 'root',
 })
 export class LanternService {
-  lanterns: ILanterns[] = [
-    {
-      name: 'Gabriel',
-      age: '7',
-      bornIn: 'Terra',
-    },
-  ];
+  lanterns: ILantern[] = [];
 
-  constructor() {}
+  constructor() {
+    this.lanterns = this.getLanternsFromLocalStorage();
+  }
+
+  setLanterns(lantern: ILantern) {}
 
   getLanterns() {
-    return this.lanterns;
+    return (this.lanterns.length && this.lanterns) || this.getLanternsFromLocalStorage();
+  }
+
+  private getLanternsFromLocalStorage(): ILantern[] {
+    const store = window.localStorage.getItem('lanterns');
+    return JSON.parse(JSON.stringify(store)) || [];
   }
 }

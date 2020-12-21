@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LanternService } from '@services/lantern/lantern.service';
-import { ILanterns } from '@services/lantern/types';
+import { ILantern } from '@services/lantern/types';
 
 @Component({
   selector: 'app-lantern-detail',
@@ -8,7 +8,7 @@ import { ILanterns } from '@services/lantern/types';
   styleUrls: ['./lantern-detail.component.scss'],
 })
 export class LanternDetailComponent implements OnInit {
-  lanterns: ILanterns[] = [];
+  lanterns: ILantern[] = [];
 
   constructor(private lanternService: LanternService) {}
 
