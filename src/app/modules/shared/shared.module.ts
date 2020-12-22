@@ -5,10 +5,12 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { MatPaginatorIntl, MatPaginatorModule } from '@angular/material/paginator';
 import { AvatarComponent } from '@components/avatars/avatar/avatar.component';
 import { BoxComponent } from '@components/grids/box/box.component';
 import { BaseInputComponent } from '@components/inputs/base-input/base-input.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CustomPaginator } from '@components/CustomPaginator';
 
 @NgModule({
   declarations: [AvatarComponent, BoxComponent, BaseInputComponent],
@@ -21,6 +23,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatInputModule,
     MatFormFieldModule,
     MatButtonModule,
+    MatPaginatorModule
   ],
   exports: [
     CommonModule,
@@ -31,10 +34,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
+    MatPaginatorModule,
     AvatarComponent,
     BoxComponent,
     BaseInputComponent,
   ],
+  providers: [{ provide: MatPaginatorIntl, useClass: CustomPaginator}],
 })
 export class SharedModule {
   static forRoot(): ModuleWithProviders<SharedModule> {
