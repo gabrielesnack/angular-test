@@ -9,6 +9,7 @@ export class LanternCardComponent implements OnInit {
   @Input() name : any = '';
   @Input() description : any = '';
   @Input() bornIn : any = '';
+  @Input() hideIcons : boolean = false;
 
   constructor() {}
 
