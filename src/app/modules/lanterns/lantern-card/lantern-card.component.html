@@ -1,11 +1,13 @@
-<mat-card class="lantern-card untruncate__onhover">
+<mat-card class="lantern-card untruncate__onhover" (click)="handleCardClick()">
   <div class="lantern-card__header">
     <c-avatar avatarClasses="avatar avatar-lg avatar-rounded" imgAlt="Avatar de teste"
       imgUrl="https://avatareslusitanos.pt/wp-content/uploads/2020/03/114-1149878_setting-user-avatar-in-specific-size-without-breaking-320x400.png">
     </c-avatar>
     <h2 class="lantern-card__title truncate-1">{{name}}</h2>
     <span *ngIf="!hideIcons" class="lantern-card__icons">
-      <mat-icon>favorite_border</mat-icon>
+      <button mat-icon-button color="warn" aria-label="Favoritar Lanterna Verde" (click)="handleFavorite()">
+        <mat-icon>{{favorite ? 'favorite' : 'favorite_border'}}</mat-icon>
+      </button>
     </span>
   </div>
   <p class="lantern-card__text truncate-2">{{description}}</p>

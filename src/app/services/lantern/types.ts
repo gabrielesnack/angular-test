@@ -4,4 +4,5 @@ export interface ILantern {
   description?: String,
   age?: String;
   bornIn?: String;
+  isFavorite?: boolean;
 }

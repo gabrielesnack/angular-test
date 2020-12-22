@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { LanternService } from '@services/lantern/lantern.service';
 import { ILantern } from '@services/lantern/types';
 
@@ -10,7 +11,7 @@ import { ILantern } from '@services/lantern/types';
 export class LanternsComponent implements OnInit {
   lanterns: ILantern[] = []
 
-  constructor(private lanternService: LanternService) {}
+  constructor(private lanternService: LanternService, private router: Router) {}
 
   ngOnInit(): void {
     this.getLanterns();
@@ -18,5 +19,18 @@ export class LanternsComponent implements OnInit {
 
   getLanterns() {
     this.lanterns = this.lanternService.getLanterns()
+  }
+
+  handleFavoriteLantern(value: boolean, lantern: ILantern) {
+    const payload = {
+      ...lantern,
+      isFavorite: value
+    }
+    this.lanternService.setLantern(payload);
+    this.getLanterns();
+  }
+
+  handleCardClick(id?: string | number) {
+    this.router.navigateByUrl(`/lanternas/${id}`)
   }
 }

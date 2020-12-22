@@ -1,6 +1,7 @@
 <main class="container">
   <c-grid-box class="box-lantern">
     <lantern-card class="box-lantern__item" *ngFor="let lantern of lanterns;" [name]="lantern.name"
-      [description]="lantern.description" [bornIn]="lantern.bornIn"></lantern-card>
+      [description]="lantern.description" [bornIn]="lantern.bornIn" [favorite]="lantern.isFavorite"
+      (onFavorite)="handleFavoriteLantern($event, lantern)" (onCardClick)="handleCardClick(lantern.id)"></lantern-card>
   </c-grid-box>
 </main>
