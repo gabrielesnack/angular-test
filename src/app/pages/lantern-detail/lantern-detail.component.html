@@ -6,7 +6,8 @@
     'Cadastrar Lanterna Verde'
     }}</h1>
   <div class="lantern-detail">
-    <lantern-editor class="lantern-detail__editor"></lantern-editor>
-    <lantern-card class="lantern-detail__preview"></lantern-card>
+    <lantern-editor class="lantern-detail__editor" (onPreviewLantern)="lantern = $event"></lantern-editor>
+    <lantern-card class="lantern-detail__preview" [name]="lantern.name" [description]="lantern.description"
+      [bornIn]="lantern.bornIn"></lantern-card>
   </div>
 </main>

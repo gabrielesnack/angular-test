@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'lantern-card',
@@ -6,6 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./lantern-card.component.scss'],
 })
 export class LanternCardComponent implements OnInit {
+  @Input() name : any = '';
+  @Input() description : any = '';
+  @Input() bornIn : any = '';
+
   constructor() {}
 
   ngOnInit(): void {}

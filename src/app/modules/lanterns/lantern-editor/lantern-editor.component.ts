@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { LanternService } from '@services/lantern/lantern.service';
 import { ILantern } from '@services/lantern/types';
@@ -10,6 +10,7 @@ import { ILantern } from '@services/lantern/types';
 })
 export class LanternEditorComponent implements OnInit {
   form: ILantern = {};
+  @Output() onPreviewLantern = new EventEmitter<ILantern>()
 
   constructor(private lanternService: LanternService, private route: ActivatedRoute) {
     this.form.id = this.route.snapshot.params.id
@@ -24,6 +25,7 @@ export class LanternEditorComponent implements OnInit {
       ...this.form,
       ...obj,
     };
+    this.onPreviewLantern.emit(this.form);
   }
 
   save(e: Event): void {
