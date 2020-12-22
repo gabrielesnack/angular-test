@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { LanternService } from '@services/lantern/lantern.service';
 import { ILantern } from '@services/lantern/types';
 
@@ -8,16 +9,19 @@ import { ILantern } from '@services/lantern/types';
   styleUrls: ['./lantern-detail.component.scss'],
 })
 export class LanternDetailComponent implements OnInit {
-  lanterns: ILantern[] = [];
+  lantern: ILantern = {};
 
-  constructor(private lanternService: LanternService) {}
-
-  ngOnInit(): void {
-    this.getLanterns();
+  constructor(private lanternService: LanternService, private route: ActivatedRoute) {
+    this.lantern.id = this.route.snapshot.params.id
   }
 
-  getLanterns() {
-    this.lanterns = this.lanternService.getLanterns();
-    console.log(this.lanterns);
+  ngOnInit(): void {
+    this.loadLantern();
+  }
+
+  loadLantern(): void {
+    if (this.lantern.id) {
+      this.lantern = this.lanternService.findById(this.lantern.id) || {};
+    }
   }
 }

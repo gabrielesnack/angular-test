@@ -11,6 +11,10 @@ export class LanternService {
     this.lanterns = this.getLanterns();
   }
 
+  findById(id: string | number) {
+    return this.lanterns.find(e => e.id == id)
+  }
+
   setLantern(lantern: ILantern) {
     const pos = this.lanterns.findIndex((e) => e.id == lantern.id);
     pos != -1 ? (this.lanterns[pos] = lantern) : this.lanterns.push({ id: this.genRandomId(), ...lantern });

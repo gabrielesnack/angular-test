@@ -1,6 +1,9 @@
 <mat-card class="form-lantern">
-  <c-base-input label="Nome" placeholder="e.g Dr Magic" (onInput)="setForm({ name: $event })"></c-base-input>
-  <c-base-input label="Idade" placeholder="e.g 27" (onInput)="setForm({ age: $event })"></c-base-input>
-  <c-base-input label="Planeta Natal" placeholder="e.g Saturno" (onInput)="setForm({ bornIn: $event })"></c-base-input>
+  <c-base-input label="Nome" placeholder="e.g Dr Magic" [value]="form.name" (onInput)="setForm({ name: $event })">
+  </c-base-input>
+  <c-base-input label="Idade" placeholder="e.g 27" [value]="form.age" (onInput)="setForm({ age: $event })">
+  </c-base-input>
+  <c-base-input label="Planeta Natal" placeholder="e.g Saturno" [value]="form.bornIn"
+    (onInput)="setForm({ bornIn: $event })"></c-base-input>
   <button mat-stroked-button color="primary" class="btn form-lantern__button" (click)="save($event)">Salvar</button>
 </mat-card>
