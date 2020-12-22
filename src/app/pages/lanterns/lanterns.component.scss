@@ -1,0 +1,12 @@
+@import '_breakpoints.scss';
+
+.box-lantern {
+  &__item {
+    margin-bottom: 2rem;
+
+    @media screen and (min-width: $breakpoint-md) {
+      margin-left: 1rem;
+      margin-right: 1rem;
+    }
+  }
+}

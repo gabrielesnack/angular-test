@@ -1,8 +1,6 @@
 <main class="container">
-  <c-grid-box>
-    <lantern-card></lantern-card>
-    <lantern-card></lantern-card>
-    <lantern-card></lantern-card>
-    <lantern-card></lantern-card>
+  <c-grid-box class="box-lantern">
+    <lantern-card class="box-lantern__item" *ngFor="let lantern of lanterns;" [name]="lantern.name"
+      [description]="lantern.description" [bornIn]="lantern.bornIn"></lantern-card>
   </c-grid-box>
 </main>
