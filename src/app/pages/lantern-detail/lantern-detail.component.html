@@ -7,7 +7,7 @@
     }}</h1>
   <div class="lantern-detail">
     <lantern-editor class="lantern-detail__editor" (onPreviewLantern)="lantern = $event"></lantern-editor>
-    <lantern-card class="lantern-detail__preview" [name]="lantern.name" [description]="lantern.description"
-      [bornIn]="lantern.bornIn" [hideIcons]="true"></lantern-card>
+    <lantern-card class="lantern-detail__preview" [name]="lantern.name" [avatarId]="lantern.avatarId"
+      [description]="lantern.description" [bornIn]="lantern.bornIn" [hideIcons]="true"></lantern-card>
   </div>
 </main>

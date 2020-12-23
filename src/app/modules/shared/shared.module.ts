@@ -6,6 +6,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatPaginatorIntl, MatPaginatorModule } from '@angular/material/paginator';
+import { MatDialogModule } from '@angular/material/dialog';
 import { AvatarComponent } from '@components/avatars/avatar/avatar.component';
 import { BoxComponent } from '@components/grids/box/box.component';
 import { BaseInputComponent } from '@components/inputs/base-input/base-input.component';
@@ -23,7 +24,8 @@ import { CustomPaginator } from '@components/CustomPaginator';
     MatInputModule,
     MatFormFieldModule,
     MatButtonModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatDialogModule
   ],
   exports: [
     CommonModule,
@@ -38,6 +40,7 @@ import { CustomPaginator } from '@components/CustomPaginator';
     AvatarComponent,
     BoxComponent,
     BaseInputComponent,
+    MatDialogModule,
   ],
   providers: [{ provide: MatPaginatorIntl, useClass: CustomPaginator}],
 })

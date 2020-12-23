@@ -1,0 +1,9 @@
+<h2 mat-dialog-title>Escolha um Avatar</h2>
+<div mat-dialog-content>
+    <c-grid-box class="group-avatar">
+        <c-avatar *ngFor="let avatar of avatars; index as i" avatarClasses="avatar avatar-lg avatar-rounded"
+            imgAlt="Avatar" [imgUrl]="'/assets/img/avatars/avatar' + (i + 1) + '.jpg'" [id]="'avatar-' + (i + 1)"
+            (click)="handleSelected(i+1)">
+        </c-avatar>
+    </c-grid-box>
+</div>

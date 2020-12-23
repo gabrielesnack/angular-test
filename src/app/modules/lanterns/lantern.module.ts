@@ -10,9 +10,12 @@ import { LanternDetailComponent } from '@pages/lantern-detail/lantern-detail.com
 //components
 import { LanternCardComponent } from './lantern-card/lantern-card.component';
 import { LanternEditorComponent } from './lantern-editor/lantern-editor.component';
+import { LanternAvatarDialogComponent, LanternAvatarDialogContentComponent } from './lantern-avatar-dialog/lantern-avatar-dialog.component';
 @NgModule({
-  declarations: [LanternCardComponent, LanternsComponent, LanternDetailComponent, LanternEditorComponent],
+  declarations: [LanternCardComponent, LanternsComponent, LanternDetailComponent, LanternEditorComponent, LanternAvatarDialogComponent, LanternAvatarDialogContentComponent],
   imports: [CommonModule, LanternRoutingModule, SharedModule],
-  exports: [CommonModule, SharedModule, LanternCardComponent],
+  entryComponents: [
+    LanternAvatarDialogContentComponent
+  ]
 })
 export class LanternModule {}

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit,EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'c-avatar',
@@ -13,4 +13,5 @@ export class AvatarComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
 }

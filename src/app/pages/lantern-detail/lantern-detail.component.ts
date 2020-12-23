@@ -21,7 +21,9 @@ export class LanternDetailComponent implements OnInit {
 
   loadLantern(): void {
     if (this.lantern.id) {
-      this.lantern = this.lanternService.findById(this.lantern.id) || {};
+      this.lantern = this.lanternService.findById(this.lantern.id) || {
+        avatarId: 1
+      };
     }
   }
 }

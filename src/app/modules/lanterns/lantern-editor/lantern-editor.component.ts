@@ -9,7 +9,7 @@ import { ILantern } from '@services/lantern/types';
   styleUrls: ['./lantern-editor.component.scss'],
 })
 export class LanternEditorComponent implements OnInit {
-  form: ILantern = {};
+  form: ILantern = {}
   @Output() onPreviewLantern = new EventEmitter<ILantern>()
 
   constructor(private lanternService: LanternService, private route: ActivatedRoute) {
@@ -36,8 +36,11 @@ export class LanternEditorComponent implements OnInit {
 
   loadLantern(): void {
     if (this.form.id) {
-      this.form = this.lanternService.findById(this.form.id) || {};
+      this.form = this.lanternService.findById(this.form.id) || {
+        avatarId: 1
+      };
       console.log(this.form)
     }
   }
+
 }

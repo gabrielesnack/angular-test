@@ -1,0 +1,37 @@
+@import '_breakpoints.scss';
+
+::ng-deep {
+  .cdk-overlay-pane {
+    width: 90vw;
+
+    @media screen and (min-width: $breakpoint-md) {
+      width: 60vw;
+    }
+
+    @media screen and (min-width: $breakpoint-xl) {
+      width: 40vw;
+    }
+  }
+
+  .group-avatar {
+    div.box {
+      grid-template-columns: repeat(2, 50%);
+
+      @media screen and (min-width: $breakpoint-sm) {
+        grid-template-columns: repeat(4, 25%);
+      }
+    }
+
+    .avatar {
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 1rem;
+      border: 1px solid black;
+      cursor: pointer;
+
+      &:hover {
+        border-color: #1da1f1;
+      }
+    }
+  }
+}
