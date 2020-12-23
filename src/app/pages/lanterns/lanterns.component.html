@@ -1,7 +1,10 @@
 <main class="container">
   <c-grid-box class="box-lantern">
-    <lantern-card class="box-lantern__item" *ngFor="let lantern of lanterns;" [name]="lantern.name"
+    <lantern-card class="box-lantern__item" *ngFor="let lantern of lanternsPaginated;" [name]="lantern.name"
       [description]="lantern.description" [bornIn]="lantern.bornIn" [favorite]="lantern.isFavorite"
       (onFavorite)="handleFavoriteLantern($event, lantern)" (onCardClick)="handleCardClick(lantern.id)"></lantern-card>
   </c-grid-box>
+  <mat-paginator [length]="lanterns.length" [pageSize]="perPage" [pageSizeOptions]="[2,5, 10, 25, 100]"
+    (page)="handlePaginator($event)">
+  </mat-paginator>
 </main>

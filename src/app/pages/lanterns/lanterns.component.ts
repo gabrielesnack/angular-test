@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LanternService } from '@services/lantern/lantern.service';
 import { ILantern } from '@services/lantern/types';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-lanterns',
@@ -10,6 +11,9 @@ import { ILantern } from '@services/lantern/types';
 })
 export class LanternsComponent implements OnInit {
   lanterns: ILantern[] = []
+  lanternsPaginated: ILantern[] = []
+  currentPage = 0;
+  perPage = 10;
 
   constructor(private lanternService: LanternService, private router: Router) {}
 
@@ -19,6 +23,12 @@ export class LanternsComponent implements OnInit {
 
   getLanterns() {
     this.lanterns = this.lanternService.getLanterns()
+    this.getLanternsPaginated();
+  }
+
+  getLanternsPaginated() {
+    const startAt = this.currentPage * this.perPage
+    this.lanternsPaginated = this.lanterns.slice(startAt, startAt + this.perPage)
   }
 
   handleFavoriteLantern(value: boolean, lantern: ILantern) {
@@ -32,5 +42,11 @@ export class LanternsComponent implements OnInit {
 
   handleCardClick(id?: string | number) {
     this.router.navigateByUrl(`/lanternas/${id}`)
+  }
+
+  handlePaginator(e: any) {
+    this.currentPage = e.pageIndex;
+    this.perPage = e.pageSize;
+    this.getLanternsPaginated()
   }
 }
