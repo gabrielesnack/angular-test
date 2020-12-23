@@ -6,8 +6,9 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog';
   template: ``,
   styleUrls: []
 })
-export class LanternAvatarDialogComponent implements OnInit {
+export class LanternAvatarDialogComponent {
   @Output() onChangeAvatar = new EventEmitter<number>();
+  @Output() refOpenDialog = this.openDialog;
 
   constructor(public dialog: MatDialog) {}
 
@@ -19,10 +20,6 @@ export class LanternAvatarDialogComponent implements OnInit {
         this.onChangeAvatar.emit(result);
       }
     });
-  }
-
-  ngOnInit() {
-    this.openDialog()
   }
 
 }

@@ -8,9 +8,10 @@
   </c-base-input>
   <c-base-input label="Planeta Natal" placeholder="e.g Saturno" [value]="form.bornIn"
     (onInput)="setForm({ bornIn: $event })"></c-base-input>
-  <button mat-stroked-button color="primary" class="btn form-lantern__button">Trocar
+  <button mat-stroked-button color="primary" class="btn form-lantern__button"
+    (click)="openDialogAvatar(avatarDialog)">Trocar
     Avatar</button>
   <button mat-stroked-button color="primary" class="btn form-lantern__button" (click)="save($event)">Salvar</button>
 
-  <lantern-avatar-dialog (onChangeAvatar)="setForm({avatarId: $event})"></lantern-avatar-dialog>
+  <lantern-avatar-dialog #avatarDialog (onChangeAvatar)="setForm({avatarId: $event})"></lantern-avatar-dialog>
 </mat-card>

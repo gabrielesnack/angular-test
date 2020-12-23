@@ -43,4 +43,8 @@ export class LanternEditorComponent implements OnInit {
     }
   }
 
+  openDialogAvatar(dialog: any) {
+    dialog.refOpenDialog()
+  }
+
 }
