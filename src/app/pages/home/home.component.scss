@@ -1,0 +1,49 @@
+@import '_breakpoints.scss';
+
+.wellcome {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+
+  @media screen and (min-width: $breakpoint-md) {
+    align-items: center;
+  }
+
+  &__image,
+  &__title,
+  &__sub-title {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  &__image {
+    width: 10rem;
+    margin-bottom: 4rem;
+
+    @media screen and (min-width: $breakpoint-md) {
+      width: 15rem;
+    }
+  }
+
+  &__title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #32325d;
+  }
+
+  &__sub-title {
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    color: #d3d3d3;
+  }
+
+  &__button {
+    @media screen and (min-width: $breakpoint-md) {
+      width: 14rem;
+    }
+  }
+}
