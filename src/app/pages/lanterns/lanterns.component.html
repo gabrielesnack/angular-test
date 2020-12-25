@@ -1,5 +1,5 @@
 <main class="main-content">
-  <div class="container latern">
+  <div class="container latern" *ngIf="lanterns.length">
     <h1 class="lantern__title">Lanternas Verdes</h1>
     <c-grid-box useClass="lantern-grid">
       <lantern-card useClass="lantern-grid__item" *ngFor="let lantern of lanternsPaginated;" [name]="lantern.name"
@@ -11,4 +11,12 @@
       (page)="handlePaginator($event)">
     </mat-paginator>
   </div>
+
+  <c-layout-error *ngIf="!lanterns.length">
+    <span slot="title">Heey!</span>
+    <span slot="description">Não encontramos nenhum herói lanterna verde. Precisamos de sua ajuda cadastre novos
+      heróis.</span>
+    <button slot="actions" mat-stroked-button color="primary" class="btn feedback__button"
+      (click)="handleCreate()">Cadastrar Herói</button>
+  </c-layout-error>
 </main>

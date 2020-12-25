@@ -1,0 +1,14 @@
+<div class="container feedback">
+  <div class="feedback__content">
+    <img class="feedback__image" src="https://iconbug.com/data/25/256/8c40d77b5ac4b7f1a04f2e881034ee09.png" alt="">
+    <h1 class="feedback__title">
+      <ng-content select="[slot=title]"></ng-content>
+    </h1>
+    <p class="feedback__description">
+      <ng-content select="[slot=description]"></ng-content>
+    </p>
+    <div class="feedback__actions">
+      <ng-content select="[slot=actions]"></ng-content>
+    </div>
+  </div>
+</div>

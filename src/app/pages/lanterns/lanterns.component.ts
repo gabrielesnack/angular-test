@@ -43,6 +43,10 @@ export class LanternsComponent implements OnInit {
     this.router.navigateByUrl(`/lanternas/${id}`)
   }
 
+  handleCreate() {
+    this.router.navigateByUrl(`/lanternas/cadastrar`)
+  }
+
   handlePaginator(e: any) {
     this.currentPage = e.pageIndex;
     this.perPage = e.pageSize;

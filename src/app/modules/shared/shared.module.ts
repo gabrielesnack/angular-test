@@ -12,9 +12,10 @@ import { BoxComponent } from '@components/grids/box/box.component';
 import { BaseInputComponent } from '@components/inputs/base-input/base-input.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CustomPaginator } from '@components/CustomPaginator';
+import { ErrorComponent } from '~/app/components/layouts/error/error.component';
 
 @NgModule({
-  declarations: [AvatarComponent, BoxComponent, BaseInputComponent],
+  declarations: [AvatarComponent, BoxComponent, BaseInputComponent, ErrorComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -25,7 +26,7 @@ import { CustomPaginator } from '@components/CustomPaginator';
     MatFormFieldModule,
     MatButtonModule,
     MatPaginatorModule,
-    MatDialogModule
+    MatDialogModule,
   ],
   exports: [
     CommonModule,
@@ -41,6 +42,7 @@ import { CustomPaginator } from '@components/CustomPaginator';
     BoxComponent,
     BaseInputComponent,
     MatDialogModule,
+    ErrorComponent
   ],
   providers: [{ provide: MatPaginatorIntl, useClass: CustomPaginator}],
 })
