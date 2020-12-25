@@ -12,7 +12,7 @@ export class LanternsComponent implements OnInit {
   lanterns: ILantern[] = []
   lanternsPaginated: ILantern[] = []
   currentPage = 0;
-  perPage = 10;
+  perPage = 8;
 
   constructor(private lanternService: LanternService, private router: Router) {}
 

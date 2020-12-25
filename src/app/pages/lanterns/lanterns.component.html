@@ -1,11 +1,14 @@
-<main class="container">
-  <c-grid-box class="box-lantern">
-    <lantern-card class="box-lantern__item" *ngFor="let lantern of lanternsPaginated;" [name]="lantern.name"
-      [avatarId]="lantern.avatarId" [description]="lantern.description" [bornIn]="lantern.bornIn"
-      [favorite]="lantern.isFavorite" (onFavorite)="handleFavoriteLantern($event, lantern)"
-      (onCardClick)="handleCardClick(lantern.id)"></lantern-card>
-  </c-grid-box>
-  <mat-paginator [length]="lanterns.length" [pageSize]="perPage" [pageSizeOptions]="[2,5, 10, 25, 100]"
-    (page)="handlePaginator($event)">
-  </mat-paginator>
+<main class="main-content">
+  <div class="container latern">
+    <h1 class="lantern__title">Lanternas Verdes</h1>
+    <c-grid-box useClass="lantern-grid">
+      <lantern-card useClass="lantern-grid__item" *ngFor="let lantern of lanternsPaginated;" [name]="lantern.name"
+        [avatarId]="lantern.avatarId" [description]="lantern.description" [bornIn]="lantern.bornIn"
+        [favorite]="lantern.isFavorite" (onFavorite)="handleFavoriteLantern($event, lantern)"
+        (onCardClick)="handleCardClick(lantern.id)"></lantern-card>
+    </c-grid-box>
+    <mat-paginator [length]="lanterns.length" [pageSize]="perPage" [pageSizeOptions]="[2,4, 8, 16, 32]"
+      (page)="handlePaginator($event)">
+    </mat-paginator>
+  </div>
 </main>

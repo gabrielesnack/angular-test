@@ -11,6 +11,7 @@ export class LanternCardComponent implements OnInit {
   @Input() bornIn : any = '';
   @Input() favorite: any = false;
   @Input() hideIcons : boolean = false;
+  @Input() useClass = '';
   @Output() onFavorite = new EventEmitter<boolean>();
   @Output() onCardClick = new EventEmitter<null>();
 

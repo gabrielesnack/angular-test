@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'c-grid-box',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./box.component.scss'],
 })
 export class BoxComponent implements OnInit {
+  @Input() useClass = '';
+
   constructor() {}
 
   ngOnInit(): void {}

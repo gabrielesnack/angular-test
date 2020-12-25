@@ -3,22 +3,23 @@
 .box {
   display: grid;
   grid-template-columns: 100%;
+  grid-row-gap: 2rem;
   justify-content: space-between;
   width: 100%;
 
   @media screen and (min-width: $breakpoint-sm) {
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 49% 49%;
   }
 
   @media screen and (min-width: $breakpoint-md) {
-    grid-template-columns: repeat(3, 33.333%);
+    grid-template-columns: repeat(3, 32%);
   }
 
   @media screen and (min-width: $breakpoint-lg) {
-    grid-template-columns: repeat(4, 25%);
+    grid-template-columns: repeat(4, 23%);
   }
 
   @media screen and (min-width: $breakpoint-xl) {
-    grid-template-columns: repeat(5, 20%);
+    grid-template-columns: repeat(5, 18%);
   }
 }

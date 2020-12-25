@@ -1,4 +1,4 @@
-<mat-card class="lantern-card untruncate__onhover" (click)="handleCardClick()">
+<mat-card class="lantern-card untruncate__onhover" [class]="useClass" (click)="handleCardClick()">
   <div class="lantern-card__header">
     <c-avatar avatarClasses="avatar avatar-lg avatar-rounded" imgAlt="Avatar de teste"
       [imgUrl]="'/assets/img/avatars/avatar' + avatarId  + '.jpg'">
