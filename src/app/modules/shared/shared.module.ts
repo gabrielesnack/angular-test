@@ -13,9 +13,10 @@ import { BaseInputComponent } from '@components/inputs/base-input/base-input.com
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CustomPaginator } from '@components/CustomPaginator';
 import { ErrorComponent } from '~/app/components/layouts/error/error.component';
+import { GlobalNavbarComponent } from '~/app/components/navbars/global-navbar/global-navbar.component';
 
 @NgModule({
-  declarations: [AvatarComponent, BoxComponent, BaseInputComponent, ErrorComponent],
+  declarations: [AvatarComponent, BoxComponent, BaseInputComponent, ErrorComponent, GlobalNavbarComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -42,7 +43,8 @@ import { ErrorComponent } from '~/app/components/layouts/error/error.component';
     BoxComponent,
     BaseInputComponent,
     MatDialogModule,
-    ErrorComponent
+    ErrorComponent,
+    GlobalNavbarComponent
   ],
   providers: [{ provide: MatPaginatorIntl, useClass: CustomPaginator}],
 })
