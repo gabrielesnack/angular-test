@@ -3,7 +3,7 @@ import { FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { LanternService } from '@services/lantern/lantern.service';
 import { ILantern } from '@services/lantern/types';
-import { lanternForm } from './helpers';
+import { LanternForm } from './helpers';
 
 @Component({
   selector: 'lantern-editor',
@@ -11,7 +11,8 @@ import { lanternForm } from './helpers';
   styleUrls: ['./lantern-editor.component.scss'],
 })
 export class LanternEditorComponent implements OnInit {
-  form = new lanternForm().build()
+  lanternFormHelper = new LanternForm()
+  form = this.lanternFormHelper.build()
 
   @Output() onPreviewLantern = new EventEmitter<ILantern>()
 
@@ -24,7 +25,7 @@ export class LanternEditorComponent implements OnInit {
   }
 
   ngDoCheck() {
-    this.onPreviewLantern.emit(lanternForm.unbuild(this.form)) //seria interessante utilizar o subscribe do rxjs ao invés de usar doCheck
+    this.onPreviewLantern.emit(this.lanternFormHelper.unbuild(this.form)) //seria interessante utilizar o subscribe do rxjs ao invés de usar doCheck
   }
 
   save(e: Event): void {
@@ -32,7 +33,7 @@ export class LanternEditorComponent implements OnInit {
     if(!this.validateForm()) {
       return;
     }
-    this.lanternService.setLantern(lanternForm.unbuild(this.form));
+    this.lanternService.setLantern(this.lanternFormHelper.unbuild(this.form));
   }
 
   validateForm() {
@@ -47,7 +48,7 @@ export class LanternEditorComponent implements OnInit {
   loadLantern(): void {
     if (this.form.id) {
       const found = this.lanternService.findById(this.form.id.value);
-      found && (this.form = new lanternForm(found).build())
+      found && (this.form = this.lanternFormHelper.build(found))
     }
   }
 

@@ -11,7 +11,7 @@ interface ILanternForm {
   isFavorite: FormControl,
 }
 
-export class lanternForm {
+export class LanternForm {
   form = {
     id: new FormControl(''),
     avatarId: new FormControl(''),
@@ -33,22 +33,25 @@ export class lanternForm {
   }
 
   constructor(lantern?: ILantern) {
-    if(lantern) {
-      this.form.id.setValue(lantern.id)
-      this.form.avatarId.setValue(lantern.avatarId)
-      this.form.name.setValue(lantern.name)
-      this.form.description.setValue(lantern.description)
-      this.form.age.setValue(lantern.age)
-      this.form.bornIn.setValue(lantern.bornIn)
-      this.form.isFavorite.setValue(lantern.isFavorite)
-    }
+    lantern && this.setForm(lantern)
   }
 
-  public build() {
+  setForm(lantern: ILantern) {
+    this.form.id.setValue(lantern.id)
+    this.form.avatarId.setValue(lantern.avatarId)
+    this.form.name.setValue(lantern.name)
+    this.form.description.setValue(lantern.description)
+    this.form.age.setValue(lantern.age)
+    this.form.bornIn.setValue(lantern.bornIn)
+    this.form.isFavorite.setValue(lantern.isFavorite)
+  }
+
+  public build(lantern?: ILantern) {
+    lantern && this.setForm(lantern)
     return this.form
   }
 
-  public static unbuild(obj: ILanternForm) : ILantern {
+  public unbuild(obj: ILanternForm) : ILantern {
     return {
       id: obj.id.value,
       avatarId: obj.avatarId.value || 1,
