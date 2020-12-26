@@ -1,6 +1,6 @@
 export interface ILantern {
   id?: string | number;
-  avatarId: string | number;
+  avatarId: number;
   name: string;
   description: string,
   age: string;

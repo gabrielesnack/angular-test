@@ -1,6 +1,20 @@
+@import '_breakpoints.scss';
+
 .form-lantern {
+  margin-bottom: 2rem;
+
   &__button {
     width: 100%;
+    margin-top: 1rem;
     margin-bottom: 1rem;
+  }
+
+  &__avatar {
+    display: flex;
+    justify-content: center;
+
+    @media screen and (min-width: $breakpoint-md) {
+      display: none;
+    }
   }
 }

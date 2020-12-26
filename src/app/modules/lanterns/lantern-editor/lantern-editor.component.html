@@ -1,4 +1,6 @@
 <mat-card class="form-lantern">
+  <c-avatar class="form-lantern__avatar" avatarClasses="avatar avatar-lg avatar-rounded"
+    [imgUrl]="'/assets/img/avatars/avatar' + form.avatarId.value.toString() + '.jpg'" imgAlt="Avatar"></c-avatar>
   <c-base-input label="Nome" placeholder="e.g Hal Jordan" [value]="form.name">
   </c-base-input>
   <c-base-input label="Descrição" placeholder="e.g Também conhecido como lanterna verde" [value]="form.description">

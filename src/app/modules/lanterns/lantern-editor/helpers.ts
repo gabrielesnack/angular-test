@@ -14,7 +14,7 @@ interface ILanternForm {
 export class LanternForm {
   form = {
     id: new FormControl(''),
-    avatarId: new FormControl(''),
+    avatarId: new FormControl(1),
     name: new FormControl('', [
       Validators.required,
       Validators.maxLength(50)

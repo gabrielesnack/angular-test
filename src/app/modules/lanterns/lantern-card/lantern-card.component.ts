@@ -6,7 +6,7 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class LanternCardComponent implements OnInit {
   @Input() name = '';
-  @Input() avatarId : string | number = 1;
+  @Input() avatarId : number = 1;
   @Input() description = '';
   @Input() bornIn = '';
   @Input() favorite = false;
