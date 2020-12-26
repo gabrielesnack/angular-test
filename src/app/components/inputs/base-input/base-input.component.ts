@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'c-base-input',
@@ -8,13 +9,10 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class BaseInputComponent implements OnInit {
   @Input() label = '';
   @Input() placeholder = '';
-  @Input() value:any = '';
-  @Output() onInput = new EventEmitter<any>();
+
+  @Input() value = new FormControl('');
 
   constructor() {}
 
   ngOnInit(): void {}
-  emit(value: any) {
-    this.onInput.emit(value);
-  }
 }

@@ -17,7 +17,7 @@ export class LanternService {
 
   setLantern(lantern: ILantern) {
     const pos = this.lanterns.findIndex((e) => e.id == lantern.id);
-    pos != -1 ? (this.lanterns[pos] = lantern) : this.lanterns.push({ id: this.genRandomId(), ...lantern });
+    pos != -1 ? (this.lanterns[pos] = lantern) : this.lanterns.push({ ...lantern, id: this.genRandomId() });
     this.setLanternsToLocalStorage();
   }
 

@@ -1,7 +1,9 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { LanternService } from '@services/lantern/lantern.service';
 import { ILantern } from '@services/lantern/types';
+import { lanternForm } from './helpers';
 
 @Component({
   selector: 'lantern-editor',
@@ -9,37 +11,43 @@ import { ILantern } from '@services/lantern/types';
   styleUrls: ['./lantern-editor.component.scss'],
 })
 export class LanternEditorComponent implements OnInit {
-  form: ILantern = {}
+  form = new lanternForm().build()
+
   @Output() onPreviewLantern = new EventEmitter<ILantern>()
 
   constructor(private lanternService: LanternService, private route: ActivatedRoute) {
-    this.form.id = this.route.snapshot.params.id
+    this.form.id.setValue(this.route.snapshot.params.id)
   }
 
   ngOnInit(): void {
     this.loadLantern();
   }
 
-  setForm(obj: ILantern): void {
-    this.form = {
-      ...this.form,
-      ...obj,
-    };
-    this.onPreviewLantern.emit(this.form);
+  ngDoCheck() {
+    this.onPreviewLantern.emit(lanternForm.unbuild(this.form)) //seria interessante utilizar o subscribe do rxjs ao invés de usar doCheck
   }
 
   save(e: Event): void {
     e.stopImmediatePropagation();
-    this.lanternService.setLantern(this.form);
-    console.log(this.form);
+    if(!this.validateForm()) {
+      return;
+    }
+    this.lanternService.setLantern(lanternForm.unbuild(this.form));
+  }
+
+  validateForm() {
+    return (
+      this.form.name.valid &&
+      this.form.description.valid &&
+      this.form.bornIn.valid &&
+      this.form.age.valid
+    )
   }
 
   loadLantern(): void {
     if (this.form.id) {
-      this.form = this.lanternService.findById(this.form.id) || {
-        avatarId: 1
-      };
-      console.log(this.form)
+      const found = this.lanternService.findById(this.form.id.value);
+      found && (this.form = new lanternForm(found).build())
     }
   }
 

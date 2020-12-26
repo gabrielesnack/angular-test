@@ -1,4 +1,18 @@
+<!-- <mat-form-field class="base-input">
+  <mat-label>{{label}}</mat-label>
+  <input matInput [placeholder]="placeholder" maxlength="15" [(ngModel)]="value" (ngModelChange)="emit($event)"> -->
+<!-- <mat-hint align="start"><strong>Don't disclose personal info</strong> </mat-hint>
+  <mat-hint align="end">{{value && value.length || 0}} / 15</mat-hint> -->
+<!-- </mat-form-field> -->
+
 <mat-form-field class="base-input">
   <mat-label>{{label}}</mat-label>
-  <input matInput [placeholder]="placeholder" [(ngModel)]="value" (ngModelChange)="emit($event)">
+  <input type="email" matInput [formControl]="value" [placeholder]="placeholder">
+  <mat-error *ngIf="value.hasError('required')">
+    O campo {{label}} <strong>obrigatório.</strong>
+  </mat-error>
+  <mat-error *ngIf="value.hasError('maxlength')">
+    O campo {{label}} excedeu o limite de <strong>{{value.errors?.maxlength.requiredLength}} caracteres.</strong>
+  </mat-error>
+
 </mat-form-field>
