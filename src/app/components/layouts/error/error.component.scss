@@ -65,10 +65,6 @@
       text-align: left;
     }
 
-    &__button {
-      width: 14rem;
-    }
-
     &__title,
     &__description {
       text-align: left;
@@ -81,7 +77,7 @@
 
   @media screen and (min-width: $breakpoint-lg) {
     &__content {
-      width: 60%;
+      width: 61%;
     }
   }
 }

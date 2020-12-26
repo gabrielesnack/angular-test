@@ -1,13 +1,29 @@
-<main class="container">
-  <h1 class="title">
-    {{
-    this.lantern.id ?
-    'Editar Lanterna Verde' :
-    'Cadastrar Lanterna Verde'
-    }}</h1>
-  <div class="lantern-detail">
-    <lantern-editor class="lantern-detail__editor" (onPreviewLantern)="lantern = $event"></lantern-editor>
-    <lantern-card class="lantern-detail__preview" [name]="lantern.name" [avatarId]="lantern.avatarId"
-      [description]="lantern.description" [bornIn]="lantern.bornIn" [hideIcons]="true"></lantern-card>
+<c-global-navbar *ngIf="lantern.id || isCreateHero"></c-global-navbar>
+
+<main class="main-content">
+  <div class="container" *ngIf="lantern.id || isCreateHero">
+    <h1 class="title">
+      {{
+      lantern.id ?
+      'Editar Lanterna Verde' :
+      'Cadastrar Lanterna Verde'
+      }}</h1>
+    <div class="lantern-detail">
+      <lantern-editor class="lantern-detail__editor" (onPreviewLantern)="lantern = $event"></lantern-editor>
+      <lantern-card class="lantern-detail__preview" [name]="lantern.name" [avatarId]="lantern.avatarId"
+        [description]="lantern.description" [bornIn]="lantern.bornIn" [hideIcons]="true"></lantern-card>
+    </div>
   </div>
+
+  <c-layout-error *ngIf="!lantern.id && !isCreateHero">
+    <span slot="title">Opa!</span>
+    <span slot="description">Não encontramos o herói que você está buscando. Estamos precisamos de sua ajuda cadastre
+      novos
+      heróis.</span>
+    <button slot="actions" mat-stroked-button color="primary" class="btn feedback__button"
+      (click)="handleErrorAction('/lanternas/cadastro')">Cadastrar novo herói</button>
+    <button slot="actions" mat-stroked-button color="primary" class="btn feedback__button"
+      (click)="handleErrorAction('/lanternas')">Voltar ao QG dos
+      Lanternas</button>
+  </c-layout-error>
 </main>

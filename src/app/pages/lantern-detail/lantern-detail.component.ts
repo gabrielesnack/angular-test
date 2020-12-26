@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { LanternService } from '@services/lantern/lantern.service';
 import { ILantern } from '@services/lantern/types';
 
@@ -11,12 +11,16 @@ import { ILantern } from '@services/lantern/types';
 export class LanternDetailComponent implements OnInit {
   lantern: ILantern = {};
 
-  constructor(private lanternService: LanternService, private route: ActivatedRoute) {
+  constructor(private lanternService: LanternService, private route: ActivatedRoute, private router: Router) {
     this.lantern.id = this.route.snapshot.params.id
   }
 
   ngOnInit(): void {
     this.loadLantern();
+  }
+
+  get isCreateHero(): boolean {
+    return this.route.snapshot.params.id == 'cadastro';
   }
 
   loadLantern(): void {
@@ -25,5 +29,9 @@ export class LanternDetailComponent implements OnInit {
         avatarId: 1
       };
     }
+  }
+
+  handleErrorAction(to: string) {
+    this.router.navigateByUrl(to)
   }
 }
