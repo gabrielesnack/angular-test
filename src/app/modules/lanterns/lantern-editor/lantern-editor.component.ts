@@ -1,6 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { LanternService } from '@services/lantern/lantern.service';
 import { ILantern } from '@services/lantern/types';
 import { LanternForm } from './helpers';
@@ -16,8 +16,12 @@ export class LanternEditorComponent implements OnInit {
 
   @Output() onPreviewLantern = new EventEmitter<ILantern>()
 
-  constructor(private lanternService: LanternService, private route: ActivatedRoute) {
+  constructor(private lanternService: LanternService, private route: ActivatedRoute, private router: Router) {
     this.form.id.setValue(this.route.snapshot.params.id)
+    this.router.events.subscribe(() => {
+      this.form = new LanternForm().build()
+      this.onPreviewLantern.emit(this.lanternFormHelper.unbuild(this.form))
+    })
   }
 
   ngOnInit(): void {

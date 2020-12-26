@@ -4,9 +4,9 @@
   <div class="container" *ngIf="lantern.id || isCreateHero">
     <h1 class="title">
       {{
-      lantern.id ?
-      'Editar Lanterna Verde' :
-      'Cadastrar Lanterna Verde'
+      isCreateHero ?
+      'Cadastrar Lanterna Verde':
+      'Editar Lanterna Verde'
       }}</h1>
     <div class="lantern-detail">
       <lantern-editor class="lantern-detail__editor" (onPreviewLantern)="lantern = $event"></lantern-editor>
