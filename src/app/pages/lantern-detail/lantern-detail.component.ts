@@ -9,7 +9,14 @@ import { ILantern } from '@services/lantern/types';
   styleUrls: ['./lantern-detail.component.scss'],
 })
 export class LanternDetailComponent implements OnInit {
-  lantern: ILantern = {};
+  lantern: ILantern = {
+    avatarId: 1,
+    name: '',
+    description: '',
+    age: '',
+    bornIn: '',
+    isFavorite: false,
+  };
 
   constructor(private lanternService: LanternService, private route: ActivatedRoute, private router: Router) {
     this.lantern.id = this.route.snapshot.params.id
@@ -25,9 +32,8 @@ export class LanternDetailComponent implements OnInit {
 
   loadLantern(): void {
     if (this.lantern.id) {
-      this.lantern = this.lanternService.findById(this.lantern.id) || {
-        avatarId: 1
-      };
+      const found = this.lanternService.findById(this.lantern.id) 
+      found && (this.lantern = found);
     }
   }
 

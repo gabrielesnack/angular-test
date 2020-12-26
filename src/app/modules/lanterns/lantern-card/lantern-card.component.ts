@@ -5,12 +5,12 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./lantern-card.component.scss'],
 })
 export class LanternCardComponent implements OnInit {
-  @Input() name : any = '';
-  @Input() avatarId : any = '';
-  @Input() description : any = '';
-  @Input() bornIn : any = '';
-  @Input() favorite: any = false;
-  @Input() hideIcons : boolean = false;
+  @Input() name = '';
+  @Input() avatarId : string | number = 1;
+  @Input() description = '';
+  @Input() bornIn = '';
+  @Input() favorite = false;
+  @Input() hideIcons = false;
   @Input() useClass = '';
   @Output() onFavorite = new EventEmitter<boolean>();
   @Output() onCardClick = new EventEmitter<null>();
