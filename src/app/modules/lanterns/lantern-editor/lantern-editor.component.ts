@@ -32,6 +32,19 @@ export class LanternEditorComponent implements OnInit {
     this.onPreviewLantern.emit(this.lanternFormHelper.unbuild(this.form)) //seria interessante utilizar o subscribe do rxjs ao invés de usar doCheck
   }
 
+  get isCreateHero(): boolean {
+    return this.route.snapshot.params.id == 'cadastrar';
+  }
+
+  deleteLantern() : void {
+    swal.feedback({ title: 'Remover Lanterna Verde', text: 'Você tem certeza que deseja remover este lanterna verde?', showCancel: true, cancelText: 'Fechar'}).then(status => {
+      if(status == 'ACCEPT') {
+        this.lanternService.deleteLantern(this.form.id.value);
+        this.router.navigateByUrl('lanternas')
+      }
+    });
+  }
+
   save(e: Event): void {
     e.stopImmediatePropagation();
     if(!this.validateForm()) {

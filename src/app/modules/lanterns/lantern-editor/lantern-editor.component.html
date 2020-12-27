@@ -15,6 +15,10 @@
     <button mat-stroked-button color="primary" class="btn form-lantern__button"
       (click)="openDialogAvatar(avatarDialog)">Trocar
       Avatar</button>
+    <button *ngIf="!isCreateHero" mat-stroked-button color="primary" class="btn form-lantern__button"
+      (click)="deleteLantern()">Remover
+      Lanterna
+      Verde</button>
     <button mat-stroked-button color="primary" class="btn form-lantern__button" (click)="save($event)">Salvar</button>
   </div>
 

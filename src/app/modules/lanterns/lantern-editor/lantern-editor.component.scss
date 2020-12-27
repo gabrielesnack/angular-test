@@ -21,7 +21,8 @@
   @media screen and (min-width: $breakpoint-md) {
     &__actions {
       flex-direction: row;
-      justify-content: space-between;
+      justify-content: space-around;
+      flex-wrap: wrap;
     }
 
     &__button {

@@ -21,6 +21,11 @@ export class LanternService {
     this.setLanternsToLocalStorage();
   }
 
+  deleteLantern(id: string | number) {
+    this.lanterns = this.lanterns.filter( e => e.id != id)
+    this.setLanternsToLocalStorage();
+  }
+
   getLanterns() {
     return (this.lanterns.length && this.lanterns) || this.getLanternsFromLocalStorage();
   }
