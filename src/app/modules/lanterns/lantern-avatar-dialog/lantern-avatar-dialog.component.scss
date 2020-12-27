@@ -1,5 +1,9 @@
 @import '_breakpoints.scss';
 
+.mat-dialog-content {
+  overflow: visible;
+}
+
 ::ng-deep {
   .cdk-overlay-pane {
     width: 90vw;
