@@ -1,4 +1,4 @@
-<mat-form-field appearance="fill">
+<mat-form-field appearance="fill" class="select-zone">
   <mat-label>Setores</mat-label>
   <mat-select [formControl]="selectZones" multiple (infiniteScroll)="getNextBatch()" [complete]="offset === data.length"
     msInfiniteScroll>
