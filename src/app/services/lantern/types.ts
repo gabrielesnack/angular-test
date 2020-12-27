@@ -5,6 +5,6 @@ export interface ILantern {
   description: string,
   age: string;
   bornIn: string;
-  zones?: Array<Number>;
+  zones: Array<string>;
   isFavorite: boolean;
 }

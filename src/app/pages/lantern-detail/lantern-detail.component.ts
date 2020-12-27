@@ -15,6 +15,7 @@ export class LanternDetailComponent implements OnInit {
     description: '',
     age: '',
     bornIn: '',
+    zones: [],
     isFavorite: false,
   };
 
