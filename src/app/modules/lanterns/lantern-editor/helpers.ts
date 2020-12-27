@@ -45,6 +45,7 @@ export class LanternForm {
     this.form.description.setValue(lantern.description)
     this.form.age.setValue(lantern.age)
     this.form.bornIn.setValue(lantern.bornIn)
+    this.form.zones.setValue(lantern.zones)
     this.form.isFavorite.setValue(lantern.isFavorite)
   }
 
