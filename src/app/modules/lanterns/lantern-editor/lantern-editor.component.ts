@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { LanternService } from '@services/lantern/lantern.service';
 import { ILantern } from '@services/lantern/types';
 import { LanternForm } from './helpers';
+import swal from '@components/swal/swal'
 
 @Component({
   selector: 'lantern-editor',
@@ -34,9 +35,13 @@ export class LanternEditorComponent implements OnInit {
   save(e: Event): void {
     e.stopImmediatePropagation();
     if(!this.validateForm()) {
+      swal.feedback({ title: 'Erro', text: 'Preencha todos os campos.', showCancel: true, cancelText: 'Fechar'});
       return;
     }
     this.lanternService.setLantern(this.lanternFormHelper.unbuild(this.form));
+    swal.feedback({ title: 'Sucesso', text: 'Lanterna verde foi salvo com sucesso, volte para o QG dos lanternas.', showCancel: true, cancelText: 'Fechar'}).then(status => {
+      status == 'ACCEPT' && this.router.navigateByUrl('lanternas')
+    });
   }
 
   validateForm() {

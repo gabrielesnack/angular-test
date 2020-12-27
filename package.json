@@ -26,6 +26,7 @@
     "ng-mat-select-infinite-scroll": "^2.1.1",
     "rxjs": "~6.6.0",
     "sass-loader": "^10.1.0",
+    "sweetalert2": "^10.12.6",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
   },

@@ -1,0 +1,22 @@
+div.swal2-actions {
+  display: flex;
+  justify-content: space-between;
+
+  .swal2-styled {
+    border-radius: 23px;
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
+  .swal2-confirm {
+    background-color: #673ab7;
+  }
+
+  .swal2-cancel {
+    border: 1px solid #c1c1c1;
+    background-color: white;
+    color: #333333;
+  }
+}
