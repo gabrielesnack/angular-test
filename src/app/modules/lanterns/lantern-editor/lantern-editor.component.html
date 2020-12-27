@@ -9,12 +9,7 @@
   </c-base-input>
   <c-base-input label="Planeta Natal" placeholder="e.g Saturno" [value]="form.bornIn"></c-base-input>
 
-  <mat-form-field appearance="fill">
-    <mat-label>Setores</mat-label>
-    <mat-select [formControl]="form.zones" multiple>
-      <mat-option *ngFor="let zone of zones; index as i" [value]="i">{{i}}</mat-option>
-    </mat-select>
-  </mat-form-field>
+  <lantern-select-zones [selectZones]="form.zones"></lantern-select-zones>
 
   <div class="form-lantern__actions">
     <button mat-stroked-button color="primary" class="btn form-lantern__button"

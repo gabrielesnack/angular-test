@@ -1,5 +1,4 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { LanternService } from '@services/lantern/lantern.service';
 import { ILantern } from '@services/lantern/types';
@@ -13,7 +12,6 @@ import { LanternForm } from './helpers';
 export class LanternEditorComponent implements OnInit {
   lanternFormHelper = new LanternForm()
   form = this.lanternFormHelper.build()
-  zones = new Array(100);
 
   @Output() onPreviewLantern = new EventEmitter<ILantern>()
 
