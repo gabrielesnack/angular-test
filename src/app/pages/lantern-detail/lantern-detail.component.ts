@@ -27,13 +27,14 @@ export class LanternDetailComponent implements OnInit {
   }
 
   get isCreateHero(): boolean {
-    return this.route.snapshot.params.id == 'cadastro';
+    return this.route.snapshot.params.id == 'cadastrar';
   }
 
   loadLantern(): void {
     if (this.lantern.id) {
       const found = this.lanternService.findById(this.lantern.id) 
       found && (this.lantern = found);
+      !found && !this.isCreateHero && this.router.navigateByUrl('/pagina-nao-encontrada')
     }
   }
 
