@@ -31,7 +31,9 @@ header {
   }
 
   &__link-item {
-    margin-right: 2rem;
+    &:nth-child(1) {
+      margin-right: 2rem;
+    }
 
     a {
       color: #32325d;
