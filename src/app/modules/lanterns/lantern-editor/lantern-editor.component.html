@@ -8,6 +8,14 @@
   <c-base-input label="Idade" placeholder="e.g 27" [value]="form.age">
   </c-base-input>
   <c-base-input label="Planeta Natal" placeholder="e.g Saturno" [value]="form.bornIn"></c-base-input>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Setores</mat-label>
+    <mat-select [formControl]="form.zones" multiple>
+      <mat-option *ngFor="let zone of zones; index as i" [value]="i">{{i}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
   <div class="form-lantern__actions">
     <button mat-stroked-button color="primary" class="btn form-lantern__button"
       (click)="openDialogAvatar(avatarDialog)">Trocar

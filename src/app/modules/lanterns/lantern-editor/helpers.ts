@@ -8,6 +8,7 @@ interface ILanternForm {
   description: FormControl,
   age: FormControl,
   bornIn: FormControl,
+  zones: FormControl,
   isFavorite: FormControl,
 }
 
@@ -29,6 +30,7 @@ export class LanternForm {
     bornIn: new FormControl('', [
       Validators.required
     ]),
+    zones: new FormControl([]),
     isFavorite: new FormControl(''),
   }
 
@@ -59,6 +61,7 @@ export class LanternForm {
       description: obj.description.value,
       age: obj.age.value,
       bornIn: obj.bornIn.value,
+      zones: obj.zones.value,
       isFavorite: obj.isFavorite.value,
     }
   }

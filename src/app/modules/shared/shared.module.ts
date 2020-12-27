@@ -7,6 +7,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatPaginatorIntl, MatPaginatorModule } from '@angular/material/paginator';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatSelectModule } from '@angular/material/select'
 import { AvatarComponent } from '@components/avatars/avatar/avatar.component';
 import { BoxComponent } from '@components/grids/box/box.component';
 import { BaseInputComponent } from '@components/inputs/base-input/base-input.component';
@@ -28,6 +29,7 @@ import { GlobalNavbarComponent } from '~/app/components/navbars/global-navbar/gl
     MatButtonModule,
     MatPaginatorModule,
     MatDialogModule,
+    MatSelectModule
   ],
   exports: [
     CommonModule,
@@ -43,6 +45,7 @@ import { GlobalNavbarComponent } from '~/app/components/navbars/global-navbar/gl
     BoxComponent,
     BaseInputComponent,
     MatDialogModule,
+    MatSelectModule,
     ErrorComponent,
     GlobalNavbarComponent
   ],

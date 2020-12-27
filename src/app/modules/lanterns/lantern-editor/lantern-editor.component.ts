@@ -13,6 +13,7 @@ import { LanternForm } from './helpers';
 export class LanternEditorComponent implements OnInit {
   lanternFormHelper = new LanternForm()
   form = this.lanternFormHelper.build()
+  zones = new Array(100);
 
   @Output() onPreviewLantern = new EventEmitter<ILantern>()
 
