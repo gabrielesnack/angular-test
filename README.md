@@ -20,6 +20,7 @@ TIPS:
 - Feito mobile first e também utilizado (BEM) para as escritas css e sass.
 - O projeto está com tslint e prettier.  
 - Tratameto de perfomance com infinite scroll no select para definição dos setores.
+- Estratégia de tratamento de erro, através de instanciar um modelo base e injetar suas ações e comunicação com o usuário.
 
 # Melhorias
 
