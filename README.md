@@ -1,27 +1,16 @@
 # TestAngular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.5.
+A Avivatec foi contratada pelos Guardiões do Universo para criar um sistema de gestão das tropas dos lanternas verdes e seus setores. É de conhecimento comum que o universo foi dividido em 3600 setores e estes divididos entre todos os lanternas verdes. O sistema deve ter permitir o cadastro de um lanterna (nome, idade e planeta natal) e vincula-lo a um ou mais setores.
 
-## Development server
+Tela 1 - Grid com todos os lanternas verdes (com paginação) e seu respectivo setor;
+Tela 2 - Ao clica em um card do grid, o sistema deve exibir o formulário com o nome, idade, planeta natal e setor a qual ele é responsável. Também será possível salvar as alterações;
+Tela 3 - Essa tela é extra e opcional, na tela 1 adicionar botão "cadastrar lanterna" ao clica-lo deve abrir a tela 2 sem nenhum campo preenchido. Essa tela deve permitir o cadastro de um lanterna novo.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+TIPS: 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- O uso de foto para identificação de um lanterna, seu setor e planeta são opcionais
+- Use reactforms
+- Use Sass
+- Use Angular material
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
