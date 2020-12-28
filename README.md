@@ -14,3 +14,14 @@ TIPS:
 - Use Sass
 - Use Angular material
 
+# Minhas declarações sobre o teste
+
+- Foi utilizado a lib material para o angular,
+- Feito mobile first e também utilizado (BEM) para as escritas css e sass.
+- O projeto está com tslint e prettier.  
+- Tratameto de perfomance com infinite scroll no select para definição dos setores.
+
+# Melhorias
+
+- Em alguns locais houve um pouco de repetição daria para melhorar e criar uma extensão mudando as extensões, acho que no css foi um pouco mais comum, na parte de outras definições como variaveis de cor e tipografia.
+- RxJs / Observable na parte de exibir a pre-visualização de edição ou criação, porém não havia uma necessidade maior, por se tratar de uma caso mais simples.
