@@ -26,3 +26,9 @@ TIPS:
 
 - Em alguns locais houve um pouco de repetição daria para melhorar e criar uma extensão mudando as extensões, acho que no css foi um pouco mais comum, na parte de outras definições como variaveis de cor e tipografia.
 - RxJs / Observable na parte de exibir a pre-visualização de edição ou criação, porém não havia uma necessidade maior, por se tratar de uma caso mais simples.
+
+# Como rodar o projeto.
+
+- Clone o projeto utilizando git clone
+- Instale as dependencias com npm install
+- Utilizando a CLI do angular, rode o comando ng serve
